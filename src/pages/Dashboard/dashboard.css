@@ -1,0 +1,13 @@
+.dashElement {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    background: #33aa9955 !important;
+    border-radius: 6px;
+} 
+.activeDashElement,
+.dashElement:hover {
+    background: #0c588b66 !important;
+    color: #212529 !important;
+}

@@ -1,0 +1,20 @@
+textarea, select, input:not(#switchTransport) {
+  border-color: #01524630 !important;
+  box-shadow: none !important;
+  background: #33aa9955 !important;
+}
+input::placeholder {
+  color: #01524679;
+}
+textarea:focus, select:focus, input:not(#switchTransport):focus {
+  background: #42bba7aa !important;
+  box-shadow: none !important;
+  border-color: #015246cc !important;
+}
+#switchTransport{
+  background-color: #33aa9955;
+}
+#switchTransport:checked{
+  background-color: #42bba7;
+  border-color: #02927c;
+}
