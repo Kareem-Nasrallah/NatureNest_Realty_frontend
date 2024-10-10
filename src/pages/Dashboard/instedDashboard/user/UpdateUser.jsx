@@ -11,19 +11,19 @@ const UpdateUser = () => {
   const [repPassword, setRepPassword] = useState("");
   const [valid, setValid] = useState(false);
   const [emailError, setEmailError] = useState("");
-  const [isSameEmail,setIsSameEmail]=useState('');
+  const [isSameEmail, setIsSameEmail] = useState("");
 
   const id = window.location.pathname.split("/")[3];
 
   const context = useContext(User);
   const token = context.value.token;
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const getData = async () => {
     try {
       const axiosData = await axios.get(
-        `http://127.0.0.1:8000/api/user/showbyid/${id}`,
+        `http://naturenestrealty.42web.io/api/user/showbyid/${id}`,
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -47,19 +47,20 @@ const UpdateUser = () => {
     setValid(true);
     try {
       let res = await axios.post(
-        `http://127.0.0.1:8000/api/user/update/${id}`,
+        `http://naturenestrealty.42web.io/api/user/update/${id}`,
         {
           name: username,
           email: email,
           password: password,
           password_confirmation: repPassword,
-        },{
-          headers:{
-            Authorization: "Bearer " + token
-          }
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
         }
       );
-      navigate("/Dashboard/Users")
+      navigate("/Dashboard/Users");
     } catch (er) {
       console.log(er);
       const emailTakenError = er.response.data.message;

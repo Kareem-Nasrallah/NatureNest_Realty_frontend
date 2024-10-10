@@ -17,7 +17,7 @@ const SignUp = () => {
   const cookie = new Cookies();
 
   const newUser = useContext(User);
-  
+
   const location = useLocation();
   const navigate = useNavigate();
   const handleNavigate = () => {
@@ -30,17 +30,20 @@ const SignUp = () => {
     e.preventDefault();
     setValid(true);
     try {
-      let res = await axios.post(`http://127.0.0.1:8000/api/register`, {
-        name: username,
-        email: email,
-        password: password,
-        password_confirmation: repPassword,
-      });
+      let res = await axios.post(
+        `http://naturenestrealty.42web.io/api/register`,
+        {
+          name: username,
+          email: email,
+          password: password,
+          password_confirmation: repPassword,
+        }
+      );
       const token = res.data.data.token;
       const userData = res.data.data.user;
       newUser.setValue({ token, userData });
-      cookie.set('Bearer', token, { path: '/' })
-      cookie.set('userData', userData, { path: '/' })
+      cookie.set("Bearer", token, { path: "/" });
+      cookie.set("userData", userData, { path: "/" });
       handleNavigate();
     } catch (er) {
       const emailTakenError = er.response.data.message;

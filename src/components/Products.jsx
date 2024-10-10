@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { User } from '../pages/authentication/UserContext';
+import { User } from "../pages/authentication/UserContext";
 
 const Products = () => {
   const [product, setProduct] = useState([]);
@@ -13,20 +13,21 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/products", {
+      .get("http://naturenestrealty.42web.io/api/products", {
         headers: {
           Authorization: "Bearer " + token,
         },
       })
-      .then((data) =>{
-        setProduct(data.data)})
+      .then((data) => {
+        setProduct(data.data);
+      })
       .catch((err) => console.log(err));
   }, [runUseEffect]);
 
   const deleteProduct = async (id) => {
     try {
       const res = await axios.delete(
-        `http://127.0.0.1:8000/api/product/delete/${id}`,
+        `http://naturenestrealty.42web.io/api/product/delete/${id}`,
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -45,7 +46,9 @@ const Products = () => {
     return (
       <tr key={index}>
         <th>{index + 1}</th>
-        <td><img src={product.image} height="100px" className='photoProduct' /></td>
+        <td>
+          <img src={product.image} height="100px" className="photoProduct" />
+        </td>
         <td>{product.title}</td>
         <td>{product.description}</td>
         <td>
@@ -77,4 +80,4 @@ const Products = () => {
   );
 };
 
-export default Products
+export default Products;

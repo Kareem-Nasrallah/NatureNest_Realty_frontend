@@ -19,7 +19,7 @@ const Home = () => {
   const getData = async () => {
     try {
       const getAxiosData = await axios.get(
-        "http://127.0.0.1:8000/api/products"
+        "http://naturenestrealty.42web.io/api/products"
       );
       setProducts(getAxiosData.data);
     } catch (err) {

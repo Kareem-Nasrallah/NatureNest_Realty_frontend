@@ -22,7 +22,7 @@ const ShowProducts = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/products")
+      .get("http://naturenestrealty.42web.io/api/products")
       .then((data) => {
         setProduct(data.data);
       })

@@ -20,7 +20,7 @@ const UpdateProducts = () => {
   const gitData = async () => {
     try {
       const getAxios = await axios.get(
-        `http://127.0.0.1:8000/api/product/showbyid/${id}`,
+        `http://naturenestrealty.42web.io/api/product/showbyid/${id}`,
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -51,7 +51,7 @@ const UpdateProducts = () => {
       formData.append("description", description);
       formData.append("image", image);
       let res = await axios.post(
-        `http://127.0.0.1:8000/api/product/update/${id}`,
+        `http://naturenestrealty.42web.io/api/product/update/${id}`,
         formData,
         {
           headers: {
@@ -85,7 +85,7 @@ const UpdateProducts = () => {
               <small className="text-secondary">It's the Old Image</small>
             )}
           </div>
-          
+
           <div className="form-group">
             <label className="pb-1 light-bold" htmlFor="title">
               Location

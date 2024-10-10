@@ -13,7 +13,7 @@ const EditProducts = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/products", {
+      .get("http://naturenestrealty.42web.io/api/products", {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -28,7 +28,7 @@ const EditProducts = () => {
   const deleteProduct = async (id) => {
     try {
       const res = await axios.delete(
-        `http://127.0.0.1:8000/api/product/delete/${id}`,
+        `http://naturenestrealty.42web.io/api/product/delete/${id}`,
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -52,7 +52,7 @@ const EditProducts = () => {
         </td>
         <td>{product.title}</td>
         <td>{product.description}</td>
-        <td className="text-success">$ { parseInt(product.price, 10)}</td>
+        <td className="text-success">$ {parseInt(product.price, 10)}</td>
         <td>
           <Link to={`${product.id}`}>
             <i className="fa-solid fa-pen-to-square btn btn-outline-primary"></i>

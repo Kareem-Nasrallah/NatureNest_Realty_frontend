@@ -28,13 +28,16 @@ const Login = () => {
     e.preventDefault();
     setValid(true);
     try {
-      const send = await axios.post("http://127.0.0.1:8000/api/login", {
-        email: email,
-        password: password,
-      });
+      const send = await axios.post(
+        "http://naturenestrealty.42web.io/api/login",
+        {
+          email: email,
+          password: password,
+        }
+      );
       const token = send.data.data.token;
       const userData = send.data.data.user;
-      console.log( send.data.data.user);
+      console.log(send.data.data.user);
       cookie.set("Bearer", token, { path: "/" });
       cookie.set("userData", userData, { path: "/" });
       newUser.setValue({ token, userData });
@@ -47,7 +50,6 @@ const Login = () => {
       }
     }
   };
-  
 
   return (
     <div className="vh-100 d-flex flex-column align-items-center justify-content-center pb-4">

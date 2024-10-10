@@ -21,7 +21,7 @@ const Header = () => {
 
   const logoutHandling = async () => {
     try {
-      await axios.post("http://127.0.0.1:8000/api/logout", null, {
+      await axios.post("http://naturenestrealty.42web.io/api/logout", null, {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -38,7 +38,11 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light fixed-top align-items-center shadow">
         <div className="container-fluid">
-          <Link onClick={hidnav} to="/" className="cinzel-decorative navbar-brand">
+          <Link
+            onClick={hidnav}
+            to="/"
+            className="cinzel-decorative navbar-brand"
+          >
             NatureNest Realty
           </Link>
           <button
@@ -55,7 +59,9 @@ const Header = () => {
                   onClick={hidnav}
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? "nav-link fristItem active" : "nav-link fristItem"
+                    isActive
+                      ? "nav-link fristItem active"
+                      : "nav-link fristItem"
                   }
                 >
                   Home
@@ -89,32 +95,32 @@ const Header = () => {
                 </NavLink>
               </li>
             </ul>
-              {!token && (
-                <li className="nav-item m-left-auto">
-                  <Link
-                    onClick={hidnav}
-                    to="/Sign-up"
-                    className="btn mt-2 mx-2 btn-primary"
-                  >
-                    Sign Up
-                  </Link>
-                  <Link
-                    onClick={hidnav}
-                    to="/Login"
-                    className="btn mt-2 mx-2 btn-info"
-                  >
-                    Login
-                  </Link>
-                </li>
-              )}
+            {!token && (
+              <li className="nav-item m-left-auto">
+                <Link
+                  onClick={hidnav}
+                  to="/Sign-up"
+                  className="btn mt-2 mx-2 btn-primary"
+                >
+                  Sign Up
+                </Link>
+                <Link
+                  onClick={hidnav}
+                  to="/Login"
+                  className="btn mt-2 mx-2 btn-info"
+                >
+                  Login
+                </Link>
+              </li>
+            )}
 
-              {token && (
-                <li className="nav-item m-left-auto px-3">
-                  <p className="btn my-2 btn-danger" onClick={logoutHandling}>
-                    Logout
-                  </p>
-                </li>
-              )}
+            {token && (
+              <li className="nav-item m-left-auto px-3">
+                <p className="btn my-2 btn-danger" onClick={logoutHandling}>
+                  Logout
+                </p>
+              </li>
+            )}
           </div>
         </div>
       </nav>

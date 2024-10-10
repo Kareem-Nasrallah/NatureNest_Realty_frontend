@@ -12,7 +12,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/user/show", {
+      .get("http://naturenestrealty.42web.io/api/user/show", {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -24,7 +24,7 @@ const Users = () => {
   const deleteUser = async (id) => {
     try {
       const res = await axios.delete(
-        `http://127.0.0.1:8000/api/user/delete/${id}`,
+        `http://naturenestrealty.42web.io/api/user/delete/${id}`,
         {
           headers: {
             Authorization: "Bearer " + token,

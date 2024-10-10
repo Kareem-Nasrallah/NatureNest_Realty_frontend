@@ -15,7 +15,6 @@ const CreateUser = () => {
   const context = useContext(User);
   const token = context.value.token;
 
-  
   const navigate = useNavigate();
 
   async function toSubmit(e) {
@@ -23,7 +22,7 @@ const CreateUser = () => {
     setValid(true);
     try {
       let res = await axios.post(
-        `http://127.0.0.1:8000/api/user/create`,
+        `http://naturenestrealty.42web.io/api/user/create`,
         {
           name: username,
           email: email,
@@ -35,7 +34,7 @@ const CreateUser = () => {
             Authorization: "Bearer " + token,
           },
         }
-      )
+      );
       navigate("/Dashboard/Users");
     } catch (er) {
       const emailTakenError = er.response.data.message;

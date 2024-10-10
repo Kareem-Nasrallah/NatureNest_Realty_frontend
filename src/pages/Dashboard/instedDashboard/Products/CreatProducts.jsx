@@ -35,7 +35,7 @@ const CreatProducts = () => {
       formData.append("price", price);
       // if (descriptionError) {
       let res = await axios.post(
-        `http://127.0.0.1:8000/api/product/create`,
+        `http://naturenestrealty.42web.io/api/product/create`,
         formData,
         {
           headers: {

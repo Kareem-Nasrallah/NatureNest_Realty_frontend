@@ -33,7 +33,7 @@ const Form = (props) => {
     try {
       if (flag) {
         let res = await axios.post(
-          `http://127.0.0.1:8000/api/${props.endPoinet}`,
+          `http://naturenestrealty.42web.io/api/${props.endPoinet}`,
           {
             name: username,
             email: email,
