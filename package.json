@@ -1,6 +1,6 @@
 {
-  "name": "naturenest_realty",
-  "homepage": "https://kareem-nasrallah.github.io/NatureNest_Realty_frontend",
+  "name": "naturenest_realty_frontend",
+  "homepage": "https://kareem-nasrallah.github.io/naturenest_realty_frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
